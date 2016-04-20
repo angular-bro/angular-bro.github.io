@@ -1,0 +1,250 @@
+<div>userGuide</div>
+
+<h2>Generators</h2>
+<table class="md-api-table">
+    <thead>
+        <tr>
+            <th>Generator Name</th>
+            <th>Generator Command</th>
+            <th>Component Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Application</td>
+            <td>
+                <code-block language="markup">yo angular-bro</code-block>
+                <ul class="directory-tree" files="tree"></ul>
+            </td>
+            <td>
+                <div class="directory-tree language-nix">
+                    <ul>
+                        <li class="root">project-name/
+                            <ul>
+                                <li>
+                                    <span class="token keyword">app/</span>
+                                    <ul>
+                                        <li class="token string">app.js</li>
+                                        <li>router.js</li>
+                                        <li>project-name.js</li>
+                                    </ul>
+                                </li>
+                                <li>tests
+                                    <ul>
+                                        <li>e2e/</li>
+                                        <li>helpers/</li>
+                                        <li>unit/</li>
+                                    </ul>
+                                </li>
+                                <li>.jscsrc</li>
+                                <li>bower.json</li>
+                                <li>Brocfile.js</li>
+                                <li>circle.yml</li>
+                                <li>Gruntfile.js</li>
+                                <li>index.html</li>
+                                <li>karma.conf.js</li>
+                                <li>package.json</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <pre code-block language="bash">
+├── app/
+│   ├── app.js
+│   ├── router.js
+│   └── project-name.js
+├── tests/
+│   ├── e2e/
+│   ├── helpers/
+│   └── unit/
+├── .jscsrc
+├── bower.json
+├── Brocfile.js
+├── circle.yml
+├── Gruntfile.js
+├── index.html
+├── karma.conf.js
+└── package.json</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Module</td>
+            <td>
+                <code-block language="markup">yo angular-bro:module [module name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+└── app/
+    └── module-name/
+        └── module.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Template</td>
+            <td>
+                <code-block language="markup">yo angular-bro:template [template name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+└── app/
+    └── template-name/
+        └── template.html</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Controller</td>
+            <td>
+                <code-block language="markup">yo angular-bro:controller [controller name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── controller-name/
+│       ├── controller.js
+│       └── module.js
+└── tests/
+    └── unit/
+        └── controller-name/
+            └── controller.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Directive</td>
+            <td>
+                <code-block language="markup">yo angular-bro:directive [directive name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── directive-name/
+│       ├── controller.js
+│       ├── directive.js
+│       ├── module.js
+│       └── template.html
+└── tests/
+    └── unit/
+        └── directive-name/
+            ├── controller.spec.js
+            └── directive.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Factory</td>
+            <td>
+                <code-block language="markup">yo angular-bro:factory [factory name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── factory-name/
+│       ├── module.js
+│       └── factory.js
+└── tests/
+    └── unit/
+        └── factory-name/
+            └── factory.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Provider</td>
+            <td>
+                <code-block language="markup">yo angular-bro:provider [provider name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── provider-name/
+│       ├── module.js
+│       └── provider.js
+└── tests/
+    └── unit/
+        └── provider-name/
+            └── provider.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Service</td>
+            <td>
+                <code-block language="markup">yo angular-bro:service [service name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── service-name/
+│       ├── module.js
+│       └── service.js
+└── tests/
+    └── unit/
+        └── service-name/
+            └── service.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>
+                <code-block language="markup">yo angular-bro:state [state name]</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+├── app/
+│   └── state-name/
+│       ├── controller.js
+│       ├── state.js
+│       ├── module.js
+│       └── template.html
+└── tests/
+    └── unit/
+        └── state-name/
+            └── controller.spec.js</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Server</td>
+            <td>
+                <code-block language="markup">yo angular-bro:server</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+└── server/
+    ├── mocks/
+    ├── proxies/
+    └── index.js
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Mock</td>
+            <td>
+                <code-block language="markup">yo angular-bro:mock path/to/mock/url</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+└── server/
+    └── mocks/
+        └── path/
+            └── to/
+                └── mock/
+                    └── url.js
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Proxy</td>
+            <td>
+                <code-block language="markup">yo angular-bro:proxy path/to/source/url path/to/destination/url</code-block></li>
+            </td>
+            <td>
+                <pre code-block language="markup">
+└── server/
+    └── proxies/
+        └── path/
+            └── to/
+                └── source/
+                    └── url.js
+                </pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Modules and Imports</h2>

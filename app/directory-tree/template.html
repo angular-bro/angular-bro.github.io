@@ -1,0 +1,4 @@
+<li ng-repeat="file in files">
+    <span class="token" ng-class="[{keyword: file.files.length > 0}, {string: file.files.length == 0}]">{{file.name}}</span>
+    <ul class="directory-tree" ng-if="file.files.length > 0" files="file.files"></ul>
+</li>

@@ -1,0 +1,102 @@
+<main>
+	<h1>Angular Bro</h1>
+
+    <div>
+        <span>Angular Bro is an app written on top of Broccoli JS (bro) intended for large angular projects.</span>
+        <ul>
+            <li>Angular JS
+                <span>Angular JS is the javascripting framework. Without it, this project would cease to exist.</span>
+            </li>
+            <li>Angular UI Router (included by default, but optional)
+                <span>Angular UI Router is the defacto router for Angular projects. However, apart from scaffolding, there is not a direct dependency on this.</span>
+            </li>
+            <li>Broccoli JS
+                <span>Broccoli JS is the asset pipeline. This is the backbone of the build process, where all of your transpiling, minification, linint, and unit testing happens.</span>
+            </li>
+            <li>Yeoman
+                <span>Yeoman is the scaffolding for the application. It has all the angular module templates and the logic to place them where you want.</span>
+            </li>
+            <li>Grunt (included by default, but optional)
+                <span>Grunt is an easy wrapper around broccoli and express for a mock server. Since this is only wrapping the build process, you can swap it out for whatever task runner you would prefer.</span>
+            </li>
+        </ul>
+
+    </div>
+
+    <h2>Prerequisites</h2>
+    <span>This project relies on yeoman for code scaffolding and bower for dependency management.</span>
+
+    <ul>
+        <li>Node >= 5.0.0</li>
+    </ul>
+
+    <pre code-block language="markup">npm install -g yo bower broccoli grunt-cli</pre>
+
+    <h2>Installation Instructions</h2>
+    <pre code-block language="markup">npm install -g generator-angular-bro</pre>
+
+    <h2>Getting Started</h2>
+    <span>Generate a brand new application</span>
+    <pre code-block language="markup">yo angular-bro [project-name]</pre>
+
+    <pre code-block language="markup">
+├── app/
+│   ├── app.js
+│   ├── router.js
+│   └── project-name.js
+├── assets/
+├── config/
+│   └── environment.js
+├── styles/
+│   └── app.less
+├── tests/
+│   ├── e2e/
+│   ├── helpers/
+│   └── unit/
+├── .jscsrc
+├── .jshintrc
+├── bower.json
+├── Brocfile.js
+├── circle.yml
+├── Gruntfile.js
+├── index.html
+├── karma.conf.js
+└── package.json</pre>
+
+    <span>View your new app</span>
+    <pre code-block language="markup">grunt serve</pre>
+
+    <h2>Adding to your Application</h2>
+    <span>Generate a new state</span>
+    <pre code-block language="markup">yo angular-bro:state new-state</pre>
+
+    <pre code-block language="markup">
+├── app/
+│   ├── new-state/
+│   │   ├── controller.js
+│   │   ├── module.js
+│   │   ├── state.js
+│   │   └── template.html</pre>
+
+    <span>Add your state to the <code-block language="markup">router.js</code-block></span>
+    <pre code-block language="js">  import angular from 'angular';
+  import config from 'config/environment';
++ import NewStateModule from 'app/new-state/module';
+
+  angular.module('router', [
+      'ui.router',
++     NewStateModule.name,
+  ])
+  .config(function ($locationProvider, $urlRouterProvider) {
+      "ngInject";
+      "use strict";
+
+      $locationProvider.html5Mode(config.html5Mode);
+      $urlRouterProvider.otherwise('/');
+  });</pre>
+
+    <h2>Testing</h2>
+    <pre code-block language="markup">grunt test</pre>
+    <span></span>
+
+</main>

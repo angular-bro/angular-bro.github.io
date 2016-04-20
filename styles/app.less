@@ -2,6 +2,41 @@
 @import '_colors.less';
 @import '_mixins.less';
 
+@import 'app/root/styles.less';
+@import 'directory_tree.less';
+
 html {
     font-size: 62.5%;
 }
+
+pre {
+	background-color: #333;
+	color: #CECECE;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+body {
+    display: flex;
+}
+
+side-navigation {
+    flex: 0 0 200px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+code-block {
+    margin: 0 .2em;
+
+    code[class*="language-"] {
+        padding: .1em .3em;
+    }
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    line-height: 1.1;
+}
+
