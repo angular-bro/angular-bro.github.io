@@ -1,0 +1,35 @@
+machine:
+  node:
+    version: 5.1.0
+
+dependencies:
+  pre:
+    - rm -rf node_modules
+    - rm -rf bower_components
+    - npm cache clean
+    - bower cache clean
+    - npm config set spin=false
+  override:
+    - npm install --global broccoli-cli
+    - npm install
+    - bower install
+
+test:
+  override:
+    - npm test
+
+deployment:
+  website:
+    branch: develop
+    commands:
+      - git config --global user.email circleci@circleci
+      - git config --global user.name CircleCI
+      - grunt build --environment=production
+      - git checkout master
+      - find . -maxdepth 1 -type d ! -name '.*' ! -name 'dist' ! -name 'node_modules' ! -name 'bower_components' | xargs rm -rf
+      - find . -maxdepth 1 -type f ! -name '.gitignore' | xargs rm -rf
+      - git add --update .
+      - mv dist/* .
+      - git add --all .
+      - git commit -m "Deploying Website"
+      - git push origin master
